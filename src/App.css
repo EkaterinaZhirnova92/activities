@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+}
+body {
+  background-image: url('https://images.pexels.com/photos/4467735/pexels-photo-4467735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+h1 {
+  color:aliceblue;
+  font-size: 50px;
+  text-shadow: 0px 0px 4px black;
+}
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 30%;
+  margin-top: 30px;
+  box-shadow: 0px 0px 4px black;
+}
+button:hover {
+  cursor: pointer;
+}
+p {
+  background-color: rgb(214, 225, 235, 0.5);
+  padding: 20px;
+  font-size: 20px;
+}
+p:hover {
+  background-color: rgb(214, 225, 235);
 }
 
-.App-link {
-  color: #61dafb;
+@media all and (max-width: 500px) {
+  h1 {font-size: 30px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  font-size: 15px;
+}
+button {
+  width: 50%;
+}
 }

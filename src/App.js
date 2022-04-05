@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+
+  // const MY_ID='';
+  // const MY_KEY='';
+
+  const [mySearch, setMySearch] = useState('');
+
+
+  useEffect(()=> {
+   getActivity()
+  }, [])
+
+  const getActivity = async() => {
+  const response = await fetch(`https://www.boredapi.com/api/activity/`);
+  const data = await response.json();
+  setMySearch(data.activity)
+  }
+  const final = (e) => {
+    e.preventDefault();
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form onSubmit={final}>
+      <br/>
+      <h1>Random activity</h1>
+      <p>{mySearch}</p>
+      <button onClick={getActivity}>change</button>
+    </form>
   );
 }
 
